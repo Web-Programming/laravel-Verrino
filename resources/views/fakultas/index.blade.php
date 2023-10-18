@@ -18,6 +18,8 @@
         <li>Belum ada data</li>
     @endif
 </ul>
+<x-alert :message="'Ini pesan sukses'"/>
+
 @endsection
 
 {{-- @include('layout.footer')--}}
