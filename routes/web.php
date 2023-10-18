@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\KurikulumController;
 use App\Http\Controllers\ProdiController;
+use App\Http\Controllers\DosenController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -72,3 +74,7 @@ Route::get('/fakultas', function() {
 });
 
 Route::get('/prodi', [ProdiController::class, 'index']);
+
+Route::resource('/kurikulum', KurikulumController::class);
+
+Route::apiResource('/dosen', DosenController::class);
