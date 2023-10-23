@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\KurikulumController;
+use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\ProdiController;
 use App\Http\Controllers\DosenController;
 use Illuminate\Support\Facades\Route;
@@ -24,9 +25,9 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
-Route::get("/mahasiswa/{nama}", function($nama = "Verrino") {
-    echo "<h1>Halo nama Saya $nama</h2>";
-});
+// Route::get("/mahasiswa/{nama}", function($nama = "Verrino") {
+//     echo "<h1>Halo nama Saya $nama</h2>";
+// });
 
 Route::get("/mahasiswa2/{nama?}", function($nama = "Verrino") {
     echo "<h1>Halo nama Saya $nama</h2>";
@@ -78,3 +79,8 @@ Route::get('/prodi', [ProdiController::class, 'index']);
 Route::resource('/kurikulum', KurikulumController::class);
 
 Route::apiResource('/dosen', DosenController::class);
+
+Route::get('/mahasiswa/insert-elq', [MahasiswaController::class,'insertElq']);
+Route::get('/mahasiswa/update-elq', [MahasiswaController::class,'updateElq']);
+Route::get('/mahasiswa/delete-elq', [MahasiswaController::class,'deleteElq']);
+Route::get('/mahasiswa/select-elq', [MahasiswaController::class,'selectElq']);
