@@ -18,5 +18,6 @@ class ProdiController extends Controller
         $kampus = 'Universitas Multi Data Palembang';
         $result = DB::select('select mahasiswas.*, prodis.nama as nama_prodi from mahasiswas, prodis where prodis.id = mahasiswas.prodi_id');
         return view('prodi.index', ['allmahasiswaprodi' => $result, 'kampus' => $kampus]);
+        //
     }
 }
