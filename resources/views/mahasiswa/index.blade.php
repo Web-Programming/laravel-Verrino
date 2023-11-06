@@ -2,19 +2,21 @@
 @section('title', 'Halaman Fakultas')
 
 @section('content')
-<h2>Fakultas</h2>
+<h2>Mahasiswa</h2>
 
-<table>
-    <tr>
-        <th>NPM</th>
-        <th>Nama</th>
-    </tr>
-    @foreach ($allmahasiswa as $i)
-    <tr>
-        <td>{{$i->npm}}</td>
-        <td>{{$i->nama}}</td>
-    </tr>
-    @endforeach
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>NPM</th><th>Nama Mahasiswa</th><th>Nama Prodi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($allmahasiswa as $item)
+            <tr>
+                <td>{{ $item->npm }}</td><td>{{ $item->nama }}</td><td>{{ $item->prodi->nama }}</td>
+            </tr>
+        @endforeach 
+    </tbody>
 </table>
 
 @endsection

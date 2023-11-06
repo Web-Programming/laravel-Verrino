@@ -14,4 +14,8 @@ class Mahasiswa extends Model
     protected $fillable = ['npm', 'nama', 'tempat_lahir', 'tanggal_lahir'];
 
     protected $guarded = [];
+
+    public function prodi() {
+        return $this->belongsTo('App\Models\Prodi');
+    }
 }
