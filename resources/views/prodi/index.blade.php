@@ -17,6 +17,7 @@
             <thead>
                 <tr>
                     {{-- <th>NPM</th><th>Nama Mahasiswa</th><th>Nama Prodi</th> --}}
+                    <th>Logo</th>
                     <th>Nama</th>
                     <th>Aksi</th>
                 </tr>
@@ -28,6 +29,7 @@
                         {{-- <td>{{$item->npm}}</td>
                         <td>{{$item->nama}}</td>
                         <td>{{$item->nama_prodi}}</td> --}}
+                        <td><img src="{{ asset('storage/' . $item->foto) }}" width="100px"></td>
                         <td>{{$item->nama}}</td>
                         <td>
                             <form action="{{ route('prodi.destroy', ['prodi' => $item->id])}}" method="post">
